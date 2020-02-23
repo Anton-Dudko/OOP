@@ -1,0 +1,79 @@
+<div class="row">
+  <div class="col-md-9">
+      <h2><%= @campaign.title %></h2>
+
+    <div class="form-group">
+      <%= image_tag @campaign.image.to_s, class: "img-show" if @campaign.image? %>
+    </div>
+    <p><%= @campaign.body.html_safe %></p>
+    <% if @campaign.video != "" %>
+      <br>
+      <iframe width="550" height="315" src="<%= @campaign.video %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <br>
+    <% end %>
+
+    <div class="card">
+    <div class="card-body">
+      <h5 class="card-title"><%= t('.aim')%>: <%= @campaign.aim %> у.е.</h5>
+      <h6 class="card-subtitle mb-2 text-muted"><%= t('.collected')%>: <%= @campaign.current %> у.е.<h6>
+      <% number=@campaign.current.to_f*100/@campaign.aim %>
+    </div>
+
+    <div class="progress">
+      <div class="progress-bar" role="progressbar" style="width: <%=number%>%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"><%=number%>%</div>
+    </div>
+    </div>
+    <br>
+    <% if user_signed_in? %>
+      <% if @campaign.user==current_user || current_user.admin %>
+        <%= link_to t('.edit'), edit_campaign_path(@campaign), :class => 'btn btn-outline-primary' %>
+        <%= link_to t('.delete'), campaign_path(@campaign), method: :delete, data: {confirm: "Вы уверены?"}, :class => 'btn btn-outline-danger' %>
+      <% end %>
+    <%end%>
+    <%= link_to t('.back'), home_path, :class => 'btn btn-outline-primary' %>
+    <hr>
+    <h2><%= t('.comments')%></h2>
+    <% @campaign.comments.each do |comment| %>
+      <div class="alert alert-light">
+        <p><strong><%= comment.username %></strong>: <%= comment.body %></p>
+        <% if user_signed_in? %>
+          <% if comment.username==current_user.email || current_user.admin %>
+            <%= link_to t('.delete'), [comment.campaign, comment], method: :delete, data: {confirm: "Вы уверены?"} %>
+          <% end %>
+        <%end%>
+        <hr>
+      </div>
+    <% end %>
+    <% if user_signed_in? %>
+      <%= form_for([@campaign, @campaign.comments.build]) do |f| %>
+        <p>
+          <%= f.hidden_field :username, :value => current_user.email %>
+          <%= f.text_area(:body, {:class => 'form-control'}) %>
+        </p>
+        <p>
+          <%= f.submit(t('campaigns.show.comment.comment'), {:class => 'btn btn-primary'}) %>
+        </p>
+      <% end %>
+    <%end%>
+  </div>
+
+  <div class="col-md-3">
+    <% if user_signed_in? %>
+      <% if @campaign.user==current_user || current_user.admin %>
+        <%= link_to t('.add news'), new_campaign_tiding_path(@campaign) %>
+      <% end %>
+    <% end %>
+    <h2><i><%= t('.news')%></i></h2>
+
+    <% @campaign.tidings.each do |tiding| %>
+    <div class="card">
+      <div class="form-group">
+        <h4><%= tiding.title %></h4>
+        <p><%= tiding.body.html_safe %></p>
+        <%= link_to t('.read'), campaign_tiding_path(@campaign, tiding) %>
+      </div>
+      </div>
+      <br>
+    <% end %>
+  </div>
+</div>

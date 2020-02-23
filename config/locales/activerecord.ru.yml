@@ -1,0 +1,27 @@
+ru:
+  activerecord:
+    models:
+      campaign: 'Кампания'
+    attributes:
+      campaign:
+        title: 'Название'
+        summary: 'Краткое содержание'
+        body: 'Содержание'
+        category_id: 'Категория'
+        tags: 'Тэги'
+        video: 'Видео'
+        aim: 'Цель'
+        current: 'Собрано'
+      tiding:
+        title: 'Название'
+        body: 'Содержание'
+      category:
+        name: 'Название'
+      user:
+        log in: 'Войти'
+        email: 'Электронная почта'
+        password: 'Пароль'
+        remember_me: 'Запомнить меня'
+        username: 'Имя пользователя'
+        password_confirmation: 'Подтверждение пароля'
+        current_password: 'Текущий пароль'

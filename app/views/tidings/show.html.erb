@@ -1,0 +1,13 @@
+<h1><%= @tiding.title %></h1>
+<div class="form-group">
+  <%= image_tag @tiding.image.to_s, class: "img-show" if @tiding.image? %>
+</div>
+<p>
+  <%= @tiding.body.html_safe %>
+</p>
+<% if user_signed_in? %>
+  <% if @campaign.user==current_user || current_user.admin %>
+    <%= link_to t('.edit'), edit_campaign_tiding_path(@campaign, @tiding), :class => 'btn btn-outline-primary btn-sm' %>
+    <%= link_to t('.delete'), [@tiding.campaign, @tiding], method: :delete, data: {confirm: "Вы уверены?"}, :class => 'btn btn-outline-danger btn-sm' %>
+  <% end %>
+<% end %>

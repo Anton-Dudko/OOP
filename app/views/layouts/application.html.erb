@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css' %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body>
+    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+      <h5 class="my-0 mr-md-auto font-weight-bold">Crowd Funding</h5>
+      <span class="p-2 text-dark align= "left""><%= link_to t('.home page'), home_path %></span>
+      <% if user_signed_in? %>
+        <% if current_user.admin %>
+          <span class="p-2 text-dark"><%= link_to t('.categories'), categories_path %></span>
+        <% end %>
+      <% end %>
+
+      <% if current_user %>
+      <nav class="my-2 my-md-0 mr-md-3">
+        <span class="p-2 text-dark"><%= link_to t('.add new campaign'), new_campaign_path %></span>
+        <span class="p-2 text-dark"><%= link_to t('.profile'), user_path %></span>
+      </nav>
+      <div>
+        <span class="btn btn-outline-primary"><%= link_to t('.sign out'), destroy_user_session_path, method: :delete %></span>
+      </div>
+      <% else %>
+
+        <span class="btn btn-outline-primary"><%= link_to t('.sign up'), new_user_registration_path %></span>
+        <span class="btn btn-outline-primary"><%= link_to t('.sign in'), new_user_session_path %></span>
+      <% end %>
+
+      <div class="btn-group btn-group-toggle" data-toggle="buttons">
+        <label class="btn btn-outline-secondary <%= "active" if I18n.locale == :ru %>">
+          <input type="radio" name="options" id="option1" autocomplete="off">
+          <%= link_to "РУС", { locale: :ru} %>
+        </label>
+        <label class="btn btn-outline-secondary <%= "active" if I18n.locale == :en %>">
+          <input type="radio" name="options" id="option2" autocomplete="off">
+          <%= link_to "EN", { locale: :en} %>
+        </label>
+      </div>
+    </div>
+
+    <body class = "background">
+      <div class="container">
+        <%= notice %>
+        <%= alert %>
+
+        <div class="row">
+          <div class="col-md-12">
+            <%= yield %>
+          </div>
+        </div>
+      </div>
+    </body>
+  </body>
+</html>

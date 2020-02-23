@@ -1,0 +1,30 @@
+<h2><%= t('.my profile')%>: <%= current_user.email%></h2>
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th><%= t('.title')%></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @campaign.each do |campaign| %>
+    <% if user_signed_in? %>
+      <% if campaign.user==current_user %>
+        <% index = 0 %>
+      <tr>
+        <td><%= link_to campaign.title, campaign_path(campaign) %></td>
+        <td>
+            <%= link_to t('.edit'), edit_campaign_path(campaign), class: "btn btn-outline-primary btn-sm" %>
+            <%= link_to t('.delete'), campaign_path(campaign), method: :delete, data: {confirm: "Вы уверены?"}, class: "btn btn-outline-danger btn-sm" %>
+        </td>
+      </tr>
+       <% end %>
+      <% end %>
+    <% end %>
+  </tbody>
+</table><hr>
+
+
+<%= link_to t('.edit profile'), edit_user_registration_path, :class => 'btn btn-outline-primary' %>

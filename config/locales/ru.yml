@@ -1,0 +1,98 @@
+ru:
+  campaigns:
+    new:
+      creating a new campaign: 'Создание новой кампании'
+      submit: 'Создать'
+    edit:
+      campaign editing: 'Редактирование кампании'
+      submit: 'Редактировать'
+    index:
+      all campaigns: 'Все кампании'
+      creator: 'Создатель'
+      categories: 'Категории'
+      tags: 'Теги'
+      more: 'Далее...'
+      aim: 'Цель'
+      collected: 'Собрано'
+    show:
+      comment:
+        comment: 'Комментировать'
+      comments: 'Комментарии'
+      news: 'Новости'
+      add news: 'Добавить новость'
+      read: 'Читать'
+      delete: 'Удалить'
+      edit: 'Редактировать'
+      back: 'Назад'
+      aim: 'Цель'
+      collected: 'Собрано'
+  tidings:
+    edit:
+      tiding editing: 'Редактирование новости'
+      submit: 'Редактировать'
+    show:
+      delete: 'Удалить'
+      edit: 'Редактировать'
+    new:
+      add news: 'Создание новости'
+      submit: 'Создать'
+  categories:
+    edit:
+      category editing: 'Редактирование категории'
+      submit: 'Редактировать'
+    index:
+      categories: 'Категории'
+      add category: 'Добавить категорию'
+      title: 'Название'
+      delete: 'Удалить'
+      edit: 'Редактировать'
+    new:
+      creating a new category: 'Создание новой категории'
+      submit: 'Создать'
+    show:
+      author: 'Автор кампании'
+      more: 'Далее...'
+      aim: 'Цель'
+      collected: 'Собрано'
+      no campaigns: 'Кампаний нет'
+  tags:
+    show:
+      no campaigns: 'Кампаний нет'
+      author: 'Автор кампании'
+      more: 'Далее...'
+      aim: 'Цель'
+      collected: 'Собрано'
+  layouts:
+    application:
+      home page: 'Главная страница'
+      categories: 'Категории'
+      profile: 'Мой профиль'
+      add new campaign: 'Добавление новых кампаний'
+      sign out: 'Выход'
+      sign in: 'Вход'
+      sign up: 'Регистрация'
+  devise:
+    sessions:
+      new:
+        log in: 'Войти'
+        sign up: 'Регистрация'
+    registrations:
+      new:
+        sign up: 'Регистрация'
+        log in: 'Войти'
+        characters minimum: ' символов минимум'
+      edit:
+        edit account: 'Редактирование аккаунта'
+        cancel account: 'Удаление аккаунта'
+        cancel: 'Удалить'
+        back: 'Назад'
+        update: 'Изменить'
+        characters minimum: ' символов минимум'
+  persons:
+    profile:
+      edit profile: 'Редактировать профиль'
+      delete account: 'Удалить аккаунта'
+      my profile: 'Мой профиль'
+      title: 'Название кампании'
+      delete: 'Удалить'
+      edit: 'Редактировать'
