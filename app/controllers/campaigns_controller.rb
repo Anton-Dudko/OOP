@@ -13,6 +13,7 @@ class CampaignsController < ApplicationController
       @campaign = Campaign.find(params[:id])
     end
 
+
     def edit
       @campaign = Campaign.find(params[:id])
     end
@@ -25,8 +26,9 @@ class CampaignsController < ApplicationController
       else
         render :edit
       end
-
+      to_donate
     end
+
 
     def destroy
       @campaign = Campaign.find(params[:id])
@@ -47,8 +49,9 @@ class CampaignsController < ApplicationController
 
     end
 
+
     private def campaign_params
-      params.require(:campaign).permit(:title, :summary, :body, :video, :aim, :current, :user_id, :all_tags, :category_id, :image)
+      params.require(:campaign).permit(:title, :summary, :body, :video, :aim, :current, :user_id, :all_tags, :category_id, :image, :donate, :creator)
     end
 
 end

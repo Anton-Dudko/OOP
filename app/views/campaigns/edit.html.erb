@@ -1,4 +1,4 @@
-<h2><%= t('.campaign editing') %></h2>
+<h2><%= t('.article editing') %></h2>
 
 <%= form_for @campaign, html: {multipart: true } do |f| %>
 <div class="form-group">
@@ -27,14 +27,6 @@
 <div class="form-group">
   <%= f.label :video %>
   <%= f.text_field(:video, {:class => 'form-control'}) %>
-</div>
-<div class="form-group">
-  <%= f.label :aim %>
-  <%= f.number_field(:aim, {:class => 'form-control'}) %>
-</div>
-<div class="form-group">
-  <%= f.label :current %>
-  <%= f.number_field(:current, {:class => 'form-control'}) %>
 </div>
 <div class="form-group">
   <%= f.submit(t('.submit'), {:class => 'btn btn-primary'}) %>

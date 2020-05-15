@@ -1,6 +1,7 @@
 class CategoriesController < ApplicationController
   before_action :authenticate_user!, except: [:show]
   before_action :set_category, only: [:show, :edit, :update, :destroy]
+  before_action :admin, only: [:index, :new, :create, :edit, :update, :destroy]
   def index
     @categories = Category.all
   end
@@ -39,6 +40,12 @@ class CategoriesController < ApplicationController
 
   private def set_category
     @category = Category.find(params[:id])
+  end
+
+  private def admin
+    if !current_user.admin
+      redirect_to campaigns_path
+    end
   end
 
   private def category_params

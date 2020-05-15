@@ -39,6 +39,7 @@ en:
     show:
       comment:
         comment: 'Comment'
+      donate: 'Donate'  
   tidings:
     edit:
       submit: 'Edit'

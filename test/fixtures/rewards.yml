@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  body: MyString
+  cost: 1
+  campaign: one
+
+two:
+  title: MyString
+  body: MyString
+  cost: 1
+  campaign: two

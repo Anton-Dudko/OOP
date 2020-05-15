@@ -3,7 +3,9 @@ Rails.application.routes.draw do
     resources :campaigns do
       resources :comments
       resources :tidings
+      resources :rewards
     end
+
     resources :tags, only: [:show]
     resources :categories
     root to: 'campaigns#index', as: "home"

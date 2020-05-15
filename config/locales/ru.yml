@@ -1,13 +1,13 @@
 ru:
   campaigns:
     new:
-      creating a new campaign: 'Создание новой кампании'
+      creating a new article: 'Создание новой статьи'
       submit: 'Создать'
     edit:
-      campaign editing: 'Редактирование кампании'
+      article editing: 'Редактирование статьи'
       submit: 'Редактировать'
     index:
-      all campaigns: 'Все кампании'
+      all articles: 'Все статьи'
       creator: 'Создатель'
       categories: 'Категории'
       tags: 'Теги'
@@ -26,16 +26,7 @@ ru:
       back: 'Назад'
       aim: 'Цель'
       collected: 'Собрано'
-  tidings:
-    edit:
-      tiding editing: 'Редактирование новости'
-      submit: 'Редактировать'
-    show:
-      delete: 'Удалить'
-      edit: 'Редактировать'
-    new:
-      add news: 'Создание новости'
-      submit: 'Создать'
+      donate: 'Пожертвовать'
   categories:
     edit:
       category editing: 'Редактирование категории'
@@ -50,15 +41,15 @@ ru:
       creating a new category: 'Создание новой категории'
       submit: 'Создать'
     show:
-      author: 'Автор кампании'
+      author: 'Автор статьи'
       more: 'Далее...'
       aim: 'Цель'
       collected: 'Собрано'
-      no campaigns: 'Кампаний нет'
+      no articles: 'Статей нет'
   tags:
     show:
-      no campaigns: 'Кампаний нет'
-      author: 'Автор кампании'
+      no articles: 'Статей нет'
+      author: 'Автор статьи'
       more: 'Далее...'
       aim: 'Цель'
       collected: 'Собрано'
@@ -67,7 +58,7 @@ ru:
       home page: 'Главная страница'
       categories: 'Категории'
       profile: 'Мой профиль'
-      add new campaign: 'Добавление новых кампаний'
+      add new article: 'Добавление новых статей'
       sign out: 'Выход'
       sign in: 'Вход'
       sign up: 'Регистрация'
@@ -93,6 +84,6 @@ ru:
       edit profile: 'Редактировать профиль'
       delete account: 'Удалить аккаунта'
       my profile: 'Мой профиль'
-      title: 'Название кампании'
+      title: 'Название статьи'
       delete: 'Удалить'
       edit: 'Редактировать'

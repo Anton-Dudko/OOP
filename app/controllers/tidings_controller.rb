@@ -35,12 +35,14 @@ class TidingsController < ApplicationController
 
   def update
     @campaign = Campaign.find(params[:campaign_id])
-    @tiding = Tiding.find(params[:id])
-    @tiding.update_attributes(tiding_params)
-    if @tiding.save
-      redirect_to campaign_path(@campaign)
-    else
-      render :edit
+    if @campaign.creator == current_user.email || current_user.admin
+      @tiding = Tiding.find(params[:id])
+      @tiding.update_attributes(tiding_params)
+      if @tiding.save
+        redirect_to campaign_path(@campaign)
+      else
+        render :edit
+      end
     end
   end
 
